@@ -1,6 +1,6 @@
 {
   "name": "sergey-zen",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "The little static site generator",
   "main": "index.js",
   "bin": {

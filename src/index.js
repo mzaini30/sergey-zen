@@ -51,6 +51,7 @@ const excludedFolders = [
   'bs-config.json',
   'bs-config.js',
   'workbox-config.js',
+  'README.md',
   IMPORTS_LOCAL,
   OUTPUT_LOCAL,
   ...EXCLUDE
