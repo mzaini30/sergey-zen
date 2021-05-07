@@ -13,11 +13,11 @@ If you’ve ever had to make a change to every header on a totally static websit
 - [Command line options](https://sergey.cool/options/)
 
 ```bash
-$ npm install sergey
+$ npm install sergey-zen
 
 # Build the site
-$ sergey
+$ sergey-zen
 
 # Run Sergey in dev mode
-$ sergey --watch
+$ sergey-zen --watch
 ```
