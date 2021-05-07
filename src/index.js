@@ -50,6 +50,7 @@ const excludedFolders = [
   'tailwind.config.js',
   'bs-config.json',
   'bs-config.js',
+  'workbox-config.js',
   IMPORTS_LOCAL,
   OUTPUT_LOCAL,
   ...EXCLUDE
