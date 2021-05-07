@@ -45,6 +45,7 @@ const excludedFolders = [
   'node_modules',
   'package.json',
   'package-lock.json',
+  'pnpm-lock.yaml',
   IMPORTS_LOCAL,
   OUTPUT_LOCAL,
   ...EXCLUDE
@@ -52,14 +53,14 @@ const excludedFolders = [
 
 const patterns = {
   whitespace: /^\s+|\s+$/g,
-  templates: /<sergey-template name="([a-zA-Z0-9-_.\\\/]*)">(.*?)<\/sergey-template>/gms,
-  complexNamedSlots: /<sergey-slot name="([a-zA-Z0-9-_.\\\/]*)">(.*?)<\/sergey-slot>/gms,
-  simpleNamedSlots: /<sergey-slot name="([a-zA-Z0-9-_.\\\/]*)"\s?\/>/gm,
+  templates: /<sergey-template name=["']([a-zA-Z0-9-_.\\\/]*)["']>(.*?)<\/sergey-template>/gms,
+  complexNamedSlots: /<sergey-slot name=["']([a-zA-Z0-9-_.\\\/]*)["']>(.*?)<\/sergey-slot>/gms,
+  simpleNamedSlots: /<sergey-slot name=["']([a-zA-Z0-9-_.\\\/]*)["']\s?\/>/gm,
   complexDefaultSlots: /<sergey-slot>(.*?)<\/sergey-slot>/gms,
   simpleDefaultSlots: /<sergey-slot\s?\/>/gm,
-  complexImports: /<sergey-import src="([a-zA-Z0-9-_.\\\/]*)"(?:\sas="(.*?)")?>(.*?)<\/sergey-import>/gms,
-  simpleImports: /<sergey-import src="([a-zA-Z0-9-_.\\\/]*)"(?:\sas="(.*?)")?\s?\/>/gm,
-  links: /<sergey-link\s?(.*?)(?:to|href)="([a-zA-Z0-9-_.#?\\\/]*)"\s?(.*?)>(.*?)<\/sergey-link>/gms
+  complexImports: /<sergey-import src=["']([a-zA-Z0-9-_.\\\/]*)["'](?:\sas=["'](.*?)["'])?>(.*?)<\/sergey-import>/gms,
+  simpleImports: /<sergey-import src=["']([a-zA-Z0-9-_.\\\/]*)["'](?:\sas=["'](.*?)["'])?\s?\/>/gm,
+  links: /<sergey-link\s?(.*?)(?:to|href)=["']([a-zA-Z0-9-_.#?\\\/]*)["']\s?(.*?)>(.*?)<\/sergey-link>/gms
 };
 
 /**
@@ -435,7 +436,7 @@ const compileFiles = async () => {
   try {
     const start = performance.now();
 
-    await clearOutputFolder();
+    // await clearOutputFolder();
     await prepareImports(IMPORTS);
 
     if (IMPORTS !== CONTENT) {
