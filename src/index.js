@@ -46,6 +46,10 @@ const excludedFolders = [
   'package.json',
   'package-lock.json',
   'pnpm-lock.yaml',
+  'windi.config.js',
+  'tailwind.config.js',
+  'bs-config.json',
+  'bs-config.js',
   IMPORTS_LOCAL,
   OUTPUT_LOCAL,
   ...EXCLUDE
